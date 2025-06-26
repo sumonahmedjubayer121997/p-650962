@@ -54,11 +54,7 @@ const Navbar = () => {
           }}
           aria-label="Pulse Robot"
         >
-          <img 
-            src="/logo.svg" 
-            alt="Pulse Robot Logo" 
-            className="h-7 sm:h-8" 
-          />
+         Sumon Ahmed
         </a>
 
         {/* Desktop Navigation */}
