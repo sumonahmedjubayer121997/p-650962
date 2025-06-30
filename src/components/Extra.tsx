@@ -244,7 +244,7 @@ const Resume = () => {
               Freelance clients
             </h2>
             <hr className="w-42 border-t-2 border-gray-700 mb-6 mt-4" />
-            <h2 className="lg:md:text-2xl text-xl font-Raleway">Loading...</h2>
+            <h2 className="lg:md:text-2xl text-xl font-Raleway">Loading....</h2>
           </div>
         </div>
       </div>
