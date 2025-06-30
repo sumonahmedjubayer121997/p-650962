@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -12,7 +11,10 @@ import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer"; // Assuming you still want the Footer
 
-const Index = () => { // Functional component
+import Resume from "@/components/Extra";
+
+const Index = () => {
+  // Functional component
   // Initialize intersection observer to detect when elements enter viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,10 +37,10 @@ const Index = () => { // Functional component
 
   useEffect(() => {
     // This helps ensure smooth scrolling for the anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href')?.substring(1);
+        const targetId = this.getAttribute("href")?.substring(1);
         if (!targetId) return;
         const targetElement = document.getElementById(targetId);
         if (!targetElement) return;
@@ -46,16 +48,21 @@ const Index = () => { // Functional component
         const offset = window.innerWidth < 768 ? 100 : 80;
         window.scrollTo({
           top: targetElement.offsetTop - offset,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       });
     });
   }, []); // Empty dependency array ensures this runs only once on mount
 
-  return ( // JSX structure for the page
-    <div className="flex flex-col min-h-screen"> {/* Added flex and min-h-screen for full height */}
+  return (
+    // JSX structure for the page
+    <div className="flex flex-col min-h-screen">
+      {" "}
+      {/* Added flex and min-h-screen for full height */}
       <Navbar /> {/* Assuming Navbar is still desired */}
-      <main className="flex-grow"> {/* Added flex-grow to main for layout */}
+      <main className="flex-grow">
+        {" "}
+        {/* Added flex-grow to main for layout */}
         <Hero />
         <HumanoidSection />
         <Features />
@@ -64,6 +71,7 @@ const Index = () => { // Functional component
         <SpecsSection />
         <Testimonials />
         <Newsletter /> {/* Assuming Newsletter is still desired */}
+        <Resume />
       </main>
       <Footer /> {/* Assuming Footer is still desired */}
     </div> // Closing div for the page container
