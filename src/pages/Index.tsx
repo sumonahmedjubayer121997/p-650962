@@ -9,7 +9,8 @@ import HowItWorks from "@/components/HowItWorks";
 import SpecsSection from "@/components/SpecsSection";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
-import Footer from "@/components/Footer"; // Assuming you still want the Footer
+import Footer from "@/components/Footer";
+import MyWorks from "@/components/MyWorks";
 
 import Resume from "@/components/Extra";
 
@@ -69,6 +70,7 @@ const Index = () => {
         <DetailsSection />
         <HowItWorks />
         <SpecsSection />
+        <MyWorks />
         <Testimonials />
         <Newsletter /> {/* Assuming Newsletter is still desired */}
         <Resume />
