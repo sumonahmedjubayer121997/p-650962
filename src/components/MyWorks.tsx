@@ -1,9 +1,11 @@
 
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const MyWorks = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
   const projects = [
     {
@@ -55,6 +57,10 @@ const MyWorks = () => {
       visible.push({ ...projects[index], position: i });
     }
     return visible;
+  };
+
+  const handleViewProject = (projectId: number) => {
+    navigate(`/project/${projectId}`);
   };
 
   return (
@@ -138,7 +144,10 @@ const MyWorks = () => {
 
                     {/* View Project Button */}
                     <div className="flex items-center justify-between">
-                      <button className="text-pulse-600 font-medium text-sm hover:text-pulse-700 transition-colors">
+                      <button 
+                        onClick={() => handleViewProject(project.id)}
+                        className="text-pulse-600 font-medium text-sm hover:text-pulse-700 transition-colors"
+                      >
                         View Project
                       </button>
                       <div className="w-8 h-8 bg-pulse-100 rounded-full flex items-center justify-center group-hover:bg-pulse-200 transition-colors">
