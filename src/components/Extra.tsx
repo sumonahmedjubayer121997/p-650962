@@ -104,13 +104,22 @@ const Resume = () => {
   ];
 
   const blobRef = useRef(null);
+  const blob2Ref = useRef(null);
 
   useEffect(() => {
-    const handleResize = () => randomBlob(blobRef);
+    const handleResize = () => {
+      randomBlob(blobRef);
+      randomBlob(blob2Ref);
+    };
+    
     randomBlob(blobRef);
+    randomBlob(blob2Ref);
 
     window.addEventListener("resize", handleResize);
-    const intervalId = setInterval(() => randomBlob(blobRef), 4000);
+    const intervalId = setInterval(() => {
+      randomBlob(blobRef);
+      randomBlob(blob2Ref);
+    }, 4000);
 
     return () => {
       clearInterval(intervalId);
@@ -122,17 +131,46 @@ const Resume = () => {
     <div
       data-aos="fade-up"
       data-aos-duration="2000"
-      className="max-w-[1380px] mx-auto w-full"
+      className="max-w-[1380px] mx-auto w-full relative"
     >
-      <div className="lg:md:px-8 px-4 lg:md:py-30 py-20 max-w-[1440px] w-full mx-auto">
+      {/* Background with gradient and pattern */}
+      <div className="lg:md:px-8 px-4 lg:md:py-30 py-20 max-w-[1440px] w-full mx-auto relative">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-50 rounded-3xl"></div>
+        
+        {/* Background pattern */}
+        <div className="absolute inset-0 bg-dots opacity-30 rounded-3xl"></div>
+        
+        {/* Animated blobs */}
         <div
           ref={blobRef}
           className="blob2"
           style={{ filter: "blur(100px)" }}
         ></div>
         <div
-          className="rounded-xl px-6 py-12"
-          style={{ background: "rgba(217, 217, 217, 0.1)" }}
+          ref={blob2Ref}
+          className="blob"
+          style={{ 
+            filter: "blur(80px)",
+            width: "300px",
+            height: "300px",
+            right: "10%",
+            top: "20%"
+          }}
+        ></div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-10 left-10 w-4 h-4 bg-pulse-500 rounded-full opacity-60 float"></div>
+        <div className="absolute top-20 right-20 w-6 h-6 bg-blue-500 rounded-full opacity-40 float" style={{ animationDelay: "2s" }}></div>
+        <div className="absolute bottom-20 left-20 w-3 h-3 bg-purple-500 rounded-full opacity-50 float" style={{ animationDelay: "4s" }}></div>
+
+        <div
+          className="rounded-xl px-6 py-12 relative z-10"
+          style={{ 
+            background: "rgba(0, 0, 0, 0.7)",
+            backdropFilter: "blur(20px)",
+            border: "1px solid rgba(255, 255, 255, 0.1)"
+          }}
         >
           <div className="flex items-center justify-between">
             <h2 className="font-Raleway font-semibold text-2xl text-[#fff]">
