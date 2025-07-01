@@ -586,3 +586,35 @@ body::-webkit-scrollbar-track {
   }
 }
 /* Extra */
+
+/* Add custom animations for the footer */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-fast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-spin-fast {
+  animation: spin-fast 2s linear infinite;
+}
+
+/* Ensure smooth transitions for hover states */
+.group:hover .animate-spin-slow {
+  animation: spin-fast 2s linear infinite;
+}

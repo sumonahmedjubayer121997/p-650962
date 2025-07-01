@@ -16,6 +16,7 @@ import Resume from "@/components/Extra";
 import Stats from "@/components/Stats";
 import Mydream from "@/components/Mydream";
 import Experience from "@/components/Experience";
+import AnimatedFooter from "@/components/AnimatedFooter";
 
 const Index = () => {
   // Functional component
@@ -82,6 +83,7 @@ const Index = () => {
         <Resume />
       </main>
       <Footer /> {/* Assuming Footer is still desired */}
+      <AnimatedFooter />
     </div> // Closing div for the page container
   ); // End of return statement
 }; // End of functional component definition
