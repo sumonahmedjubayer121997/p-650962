@@ -13,6 +13,9 @@ import Footer from "@/components/Footer";
 import MyWorks from "@/components/MyWorks";
 
 import Resume from "@/components/Extra";
+import Stats from "@/components/Stats";
+import Mydream from "@/components/Mydream";
+import Experience from "@/components/Experience";
 
 const Index = () => {
   // Functional component
@@ -66,6 +69,9 @@ const Index = () => {
         {/* Added flex-grow to main for layout */}
         <Hero />
         <HumanoidSection />
+        <Mydream />
+        <Experience />
+        <Stats />
         <Features />
         <DetailsSection />
         <HowItWorks />
