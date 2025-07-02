@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
@@ -102,9 +103,9 @@
 
   body {
     @apply bg-white text-black font-sans antialiased;
-    /* Subtle dotted grid background */
-    background-image: radial-gradient(circle, #ddd 1px, transparent 1px);
-    background-size: 30px 30px;
+    /* More visible dotted grid background */
+    background-image: radial-gradient(circle, #bbb 1.5px, transparent 1.5px);
+    background-size: 25px 25px;
     background-attachment: fixed;
   }
 
