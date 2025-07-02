@@ -102,6 +102,10 @@
 
   body {
     @apply bg-white text-black font-sans antialiased;
+    /* Subtle dotted grid background */
+    background-image: radial-gradient(circle, #ddd 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-attachment: fixed;
   }
 
   /* Smooth scrolling */
